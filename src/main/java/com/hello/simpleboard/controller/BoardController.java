@@ -2,6 +2,7 @@ package com.hello.simpleboard.controller;
 
 import com.hello.simpleboard.dto.GetBoard;
 import com.hello.simpleboard.dto.PostBoard;
+import com.hello.simpleboard.dto.PutBoard;
 import com.hello.simpleboard.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -25,5 +26,14 @@ public class BoardController {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(GetBoard.Response.of(boardService.getBoard(id)));
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<PutBoard.Response> putBoard(
+            @RequestBody PutBoard.Request request, @PathVariable Long id
+    ) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(PutBoard.Response.of(boardService.updateBoard(id, request)));
     }
 }
