@@ -10,10 +10,17 @@ public class PutBoard {
     @Getter
     @NoArgsConstructor
     public static class Request {
-        private Long id;
         private String title;
         private String description;
         private String writer;
+
+        public static Request of(String title, String description, String writer) {
+            Request request = new Request();
+            request.title = title;
+            request.description = description;
+            request.writer = writer;
+            return request;
+        }
     }
 
     @Getter
