@@ -1,9 +1,9 @@
-package com.hello.simpleboard.controller;
+package com.hello.simpleboard.board.controller;
 
-import com.hello.simpleboard.dto.GetBoard;
-import com.hello.simpleboard.dto.PostBoard;
-import com.hello.simpleboard.dto.PutBoard;
-import com.hello.simpleboard.service.BoardService;
+import com.hello.simpleboard.board.dto.GetBoard;
+import com.hello.simpleboard.board.dto.PostBoard;
+import com.hello.simpleboard.board.dto.PutBoard;
+import com.hello.simpleboard.board.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

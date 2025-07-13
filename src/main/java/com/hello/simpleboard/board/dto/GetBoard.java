@@ -1,6 +1,6 @@
-package com.hello.simpleboard.dto;
+package com.hello.simpleboard.board.dto;
 
-import com.hello.simpleboard.entity.Board;
+import com.hello.simpleboard.board.entity.Board;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

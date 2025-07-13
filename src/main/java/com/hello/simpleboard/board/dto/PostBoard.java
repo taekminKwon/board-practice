@@ -1,12 +1,12 @@
-package com.hello.simpleboard.dto;
+package com.hello.simpleboard.board.dto;
 
-import com.hello.simpleboard.entity.Board;
+import com.hello.simpleboard.board.entity.Board;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-public class PutBoard {
+public class PostBoard {
     @Getter
     @NoArgsConstructor
     public static class Request {
@@ -14,7 +14,10 @@ public class PutBoard {
         private String description;
         private String writer;
 
-        public static Request of(String title, String description, String writer) {
+        public static Request of (
+                String title,
+                String description,
+                String writer) {
             Request request = new Request();
             request.title = title;
             request.description = description;

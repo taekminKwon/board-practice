@@ -1,4 +1,4 @@
-package com.hello.simpleboard.entity;
+package com.hello.simpleboard.board.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

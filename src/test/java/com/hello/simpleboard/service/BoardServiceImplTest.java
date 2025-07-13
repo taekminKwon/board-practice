@@ -1,8 +1,9 @@
 package com.hello.simpleboard.service;
 
-import com.hello.simpleboard.dto.PostBoard;
-import com.hello.simpleboard.dto.PutBoard;
-import com.hello.simpleboard.entity.Board;
+import com.hello.simpleboard.board.dto.PostBoard;
+import com.hello.simpleboard.board.dto.PutBoard;
+import com.hello.simpleboard.board.entity.Board;
+import com.hello.simpleboard.board.service.BoardService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
