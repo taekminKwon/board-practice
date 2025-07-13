@@ -39,4 +39,18 @@ public class Board {
         board.date = date;
         return board;
     }
+
+    public Board update(
+            String title,
+            String description,
+            String writer,
+            LocalDate date
+    ) {
+        this.title = title;
+        this.description = description;
+        this.writer = writer;
+        this.date = date;
+
+        return this;
+    }
 }
