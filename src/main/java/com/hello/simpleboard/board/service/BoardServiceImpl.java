@@ -3,9 +3,9 @@ package com.hello.simpleboard.board.service;
 import com.hello.simpleboard.board.dto.PostBoard;
 import com.hello.simpleboard.board.dto.PutBoard;
 import com.hello.simpleboard.board.entity.Board;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
@@ -13,6 +13,7 @@ import java.time.LocalDate;
 @RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService {
     private final BoardRepository boardRepository;
+    @Transactional
     public Board save(PostBoard.Request request) {
         return boardRepository.save(
                     Board.of(
@@ -24,6 +25,7 @@ public class BoardServiceImpl implements BoardService {
         );
     }
 
+    @Transactional(readOnly = true)
     public Board getBoard(Long boardId) {
         return boardRepository.findById(boardId).orElseThrow();
     }
