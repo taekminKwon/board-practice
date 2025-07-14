@@ -1,6 +1,7 @@
 package com.hello.simpleboard.post.post.controller;
 
 import com.hello.simpleboard.post.post.dto.CreatePost;
+import com.hello.simpleboard.post.post.dto.GetPost;
 import com.hello.simpleboard.post.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -19,5 +20,14 @@ public class PostController {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(postService.createPost(request, boardId));
+    }
+
+    @GetMapping("/{boardId}/posts/{postId}")
+    public ResponseEntity<GetPost.Response> getPost(@PathVariable Long boardId,
+                                                    @PathVariable Long postId
+    ) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(postService.getPost(boardId, postId));
     }
 }
