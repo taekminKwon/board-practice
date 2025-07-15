@@ -14,11 +14,23 @@ public class CreatePost {
         private String title;
         private String content;
         private String writer;
+        public static Request of (
+                String title,
+                String content,
+                String writer
+        ) {
+            Request request = new Request();
+            request.title = title;
+            request.content = content;
+            request.writer = writer;
+            return request;
+        }
     }
 
     @Getter
     @NoArgsConstructor(access = AccessLevel.PRIVATE)
     public static class Response {
+        private Long id;
         private Long boardId;
         private String title;
         private String content;
@@ -27,6 +39,7 @@ public class CreatePost {
 
         public static Response of(Post post, Long boardId) {
             Response response = new Response();
+            response.id = post.getId();
             response.boardId = boardId;
             response.title = post.getTitle();
             response.content = post.getContent();

@@ -11,6 +11,7 @@ public class GetPost {
     @Getter
     @NoArgsConstructor(access = AccessLevel.PRIVATE)
     public static class Response {
+        private Long id;
         private Long boardId;
         private String title;
         private String content;
@@ -19,6 +20,7 @@ public class GetPost {
 
         public static Response of(Post post, Long boardId) {
             Response response = new Response();
+            response.id = post.getId();
             response.boardId = boardId;
             response.title = post.getTitle();
             response.content = post.getContent();

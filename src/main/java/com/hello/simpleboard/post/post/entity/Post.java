@@ -1,7 +1,6 @@
 package com.hello.simpleboard.post.post.entity;
 
 import com.hello.simpleboard.board.entity.Board;
-import com.hello.simpleboard.post.post.dto.CreatePost;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,12 +33,12 @@ public class Post {
     @Column(name = "time")
     private LocalDate date;
 
-    public static Post of(CreatePost.Request request, Board board) {
+    public static Post of(String title, String content, String writer, Board board) {
         Post post = new Post();
         post.board = board;
-        post.title = request.getTitle();
-        post.content = request.getContent();
-        post.writer = request.getWriter();
+        post.title = title;
+        post.content = content;
+        post.writer = writer;
         post.date = LocalDate.now();
         return post;
     }

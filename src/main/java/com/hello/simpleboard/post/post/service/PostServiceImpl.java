@@ -18,7 +18,10 @@ public class PostServiceImpl implements PostService {
     @Override
     public CreatePost.Response createPost(CreatePost.Request request, Long boardId) {
         Board board = boardRepository.findById(boardId).orElseThrow();
-        return postStore.store(Post.of(request, board), boardId);
+        return postStore.store(
+                Post.of(request.getTitle(), request.getContent(), request.getWriter(), board),
+                boardId
+        );
     }
 
     @Override
