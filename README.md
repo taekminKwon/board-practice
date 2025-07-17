@@ -125,5 +125,3 @@
 | MVP 2 | 좋아요/조회수/통계 기반 기능 |
 | MVP 3 | 포인트 지급·차감, 트랜잭션 처리 |
 | MVP 4 | 어드민 기능, 사용자 제재, 전체 통계 |
-# board-practice
-# board-practice
